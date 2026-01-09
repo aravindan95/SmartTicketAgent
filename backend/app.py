@@ -4,7 +4,8 @@ import os
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from backend.agent import create_smart_ticket_agent, run_agent_conversation
-from backend.tools.mock_data import search_tickets, get_ticket_by_id
+from backend.tools.mock_data import get_ticket_by_id
+from backend.tools.ticket_tools import search_tickets_tool
 import uuid
 
 app = Flask(__name__)
@@ -102,7 +103,7 @@ def search_tickets_endpoint():
         ticket_type = data.get('type')
         date = data.get('date')
         
-        results = search_tickets(origin, destination, ticket_type, date)
+        results = search_tickets_tool(origin, destination, ticket_type, date)
         
         return jsonify({
             'success': True,
