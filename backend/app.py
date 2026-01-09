@@ -3,8 +3,8 @@
 import os
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
-from agent import create_smart_ticket_agent, run_agent_conversation
-from tools.mock_data import search_tickets, get_ticket_by_id
+from backend.agent import create_smart_ticket_agent, run_agent_conversation
+from backend.tools.mock_data import search_tickets, get_ticket_by_id
 import uuid
 
 app = Flask(__name__)
