@@ -18,6 +18,7 @@ def fetch_flights_from_gemini(origin=None, destination=None, date=None):
     """
     api_key = os.environ.get('GEMINI_API_KEY')
     if not api_key:
+        print("No api key")
         return []
     
     try:
