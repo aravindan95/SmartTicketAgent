@@ -47,7 +47,7 @@ Return ONLY the JSON array, no other text. Example format:
 """
         
         response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+            model="gemma-3-12b",
             contents=prompt
         )
         
